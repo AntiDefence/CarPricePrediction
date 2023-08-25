@@ -15,31 +15,37 @@ The Turbo column is derived from the Engine volume column to indicate whether a 
 The Engine volume and Mileage columns are processed by removing units and converting them to appropriate numeric types.
 The Doors column is cleaned and converted to integer type.
 Categorical columns are encoded using LabelEncoder.
+
 Data Splitting and Scaling:
 
 The target variable y (car prices) and the feature matrix x are defined.
 Features are standardized using StandardScaler.
 The dataset is split into training, validation, and test sets using train_test_split.
+
 Neural Network Model:
 
 A function modelkur is defined to create a sequential neural network model with customizable hyperparameters. #modelkurt is Turkish, and its meaning is defining model :)
 The function takes parameters like units, activation, learning_rate, hidden_layers, and dropout_rate to configure the architecture of the neural network.
 The model is compiled with the Adam optimizer, mean absolute error (MAE) loss, and MAE metric.
+
 Hyperparameter Optimization:
 
 A parameter grid parametreler is defined to specify hyperparameters for the grid search.
 A KerasRegressor is created using the defined model function.
 Grid search (GridSearchCV) is performed to find the best hyperparameters using cross-validation.
 The best parameters are extracted from the grid search results.
+
 Model Training and Prediction:
 
 The best model is instantiated using the best hyperparameters.
 The model is trained on the training data and validated using the validation data.
 Predictions are made on the test set.
+
 Results Visualization:
 
 Matplotlib is used to create visualizations.
 Two subplots are created: one for training and validation loss over epochs, and another for comparing actual vs. predicted car prices for a subset of test data.
+
 Instructions:
 
 Ensure you have the necessary libraries installed (numpy, pandas, sklearn, keras, matplotlib).
